@@ -66,6 +66,12 @@ Power BI report (`ReturnIQ_Dashboard.pbix`) with:
 
 ![Dashboard](dashboard/dashboard_screenshot.png)
 
+## Azure Screenshots
+
+![Resource Group](screenshots/resource_group.png)
+![ADLS Containers](screenshots/adls_containers.png)
+![Synapse Query Results](screenshots/synapse_query_results.png)
+
 ## How to Run
 
 1. Upload the CSV to the `bronze` container in `returniqadls`.
