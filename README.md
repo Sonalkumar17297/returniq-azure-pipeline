@@ -27,7 +27,7 @@ Secrets (ADLS access key) are stored in **Azure Key Vault** and read in Databric
 | Secrets | Azure Key Vault (`returniq-kv`) |
 | Visualization | Power BI |
 
-Region: Central India · Resource group: `returniq-rg`
+Region: Central India (Azure Data Factory deployed in East US) · Resource group: `returniq-rg`
 
 ## Data Flow
 
@@ -71,6 +71,16 @@ Power BI report (`ReturnIQ_Dashboard.pbix`) with:
 ![Resource Group](screenshots/resource_group.png)
 ![ADLS Containers](screenshots/adls_containers.png)
 ![Synapse Query Results](screenshots/synapse_query_results.png)
+
+
+## Orchestration
+
+An Azure Data Factory pipeline (`pl_returniq_ingest_transform`) copies the source CSV
+from GitHub into the Bronze container, then runs the Databricks notebook that builds
+Silver and Gold. A daily schedule trigger is configured (kept disabled to save credits),
+and the ADLS and Databricks credentials are read from Azure Key Vault.
+
+![ADF pipeline run](screenshots/adf_pipeline_run.png)
 
 ## How to Run
 
